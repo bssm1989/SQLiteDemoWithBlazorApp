@@ -50,10 +50,7 @@
 #elif IOS
         public bool IsHttpsLocalhost(NSUrlSessionHandler sender, string url, Security.SecTrust trust)
         {
-        if (url.StartsWith("https://localhost"))
-            //if (url.StartsWith("https://www.psutrobon.com/gis_bssm/index.php?table=todoRest"))
-                return true;
-            return false;
+        return true;
         }
 #endif
     }

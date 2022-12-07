@@ -15,22 +15,22 @@
 </ul>
 
 @code{
-    //public partial class index : ContentPage
-    //{
+        //public partial class index : ContentPage
+        //{
 
-    //ITodoService _todoService;
-    private List<province> todoList = new();
-    protected override async Task OnInitializedAsync()
-    {
+        //ITodoService _todoService;
+        private List<province> todoList = new();
+        protected override async Task OnInitializedAsync()
+        {
 
-        //await StudentService.syncProvinceAsync();
-        //todoList = await _todoService.GetTasksAsync_person();
-        todoList = await _todoService.GetTasksAsync_province();
-        //await StudentService.addAllProvince(todoList);
-        //syndataForEditform();
-    }
-    private async void syndataForEditform()
-    {
+            //await StudentService.syncProvinceAsync();
+            //todoList = await _todoService.GetTasksAsync_person();
+            todoList = await _todoService.GetTasksAsync_province();
+            await StudentService.addAllProvince(todoList);
+            //syndataForEditform();
+        }
+        //private async void syndataForEditform()
+        //{
 
 
 
@@ -51,7 +51,7 @@
         //await StudentService.addAllconst_school(await _todoService.GetTasksAsync_const_school());
         //await StudentService.addAllconst_stsmar(await _todoService.GetTasksAsync_const_stsmar());
         //await StudentService.addAllconst_vaccination(await _todoService.GetTasksAsync_const_vaccination());
-    }
+    @*}*@
     //}
 }
 
