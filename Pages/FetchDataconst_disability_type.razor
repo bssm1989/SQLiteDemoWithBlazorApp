@@ -1,12 +1,12 @@
 
-@page "/fetchdataprovince"
+@page "/fetchdataconst_disability_type"
 
 @using SQLiteDemoWithBlazorApp.Data
 @using SQLiteDemoWithBlazorApp.Models
 @using SQLiteDemoWithBlazorApp.Services
 @inject IStudentService StudentService
 @inject NavigationManager NavManager
-<h1>province List</h1>
+<h1>const_disability_type List</h1>
 
 <p>This component demonstrates fetching data from a service.</p>
 
@@ -29,13 +29,13 @@ else
                 @foreach (var student in students)
                 {
                     <tr>
-                        <td>@student.province_id</td>
-                        <td>@student.province_name_thai</td>
+                        <td>@student.distypid</td>
+                        <td>@student.distypnme</td>
 						@*<td>
 						<button type="submit" @onclick="@(()=> EditStudent(student.StudentID))" class="btn btn-primary">Edit</button>
 					</td>*@
 					<td>
-						@*<button type="submit" @onclick="@(()=> DeleteStudent(student))" class="btn btn-primary">Delete</button>*@
+						<button type="submit" @onclick="@(()=> DeleteStudent(student))" class="btn btn-primary">Delete</button>
 					</td>
                     </tr>
                 }
@@ -46,11 +46,11 @@ else
 }
 
 @code {
-    private List<province> students;
+    private List<const_disability_type> students;
 
     protected override async Task OnInitializedAsync()
     {
-        students = await StudentService.GetAll_province();
+        students = await StudentService.GetAll_const_disability_type();
     }
 
     private void EditStudent(int studentID)
@@ -58,14 +58,14 @@ else
         NavManager.NavigateTo($"update_student/{studentID}");
     }
 
-    //private async void DeleteStudent(province student)
-    //{
-    //    var response = await StudentService.Delete_province(student);
-    //    if (response > 0)
-    //    {
-    //        await OnInitializedAsync();
-    //        this.StateHasChanged();
-    //    }
-    //}
+    private async void DeleteStudent(const_disability_type student)
+    {
+        var response = await StudentService.Delete_const_disability_type(student);
+        if (response > 0)
+        {
+            await OnInitializedAsync();
+            this.StateHasChanged();
+        }
+    }
 }
 

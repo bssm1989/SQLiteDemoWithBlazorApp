@@ -15,42 +15,79 @@
 </ul>
 
 @code{
-        //public partial class index : ContentPage
-        //{
+    //public partial class index : ContentPage
+    //{
 
-        //ITodoService _todoService;
-        private List<province> todoList = new();
-        protected override async Task OnInitializedAsync()
-        {
+    //ITodoService _todoService;
+    private List<province> todoList = new();
+    protected override async Task OnInitializedAsync()
+    {
 
-            //await StudentService.syncProvinceAsync();
-            //todoList = await _todoService.GetTasksAsync_person();
-            todoList = await _todoService.GetTasksAsync_province();
-            await StudentService.addAllProvince(todoList);
-            //syndataForEditform();
-        }
-        //private async void syndataForEditform()
-        //{
+        //await StudentService.syncProvinceAsync();
+        //todoList = await _todoService.GetTasksAsync_person();
 
 
 
-        ////await StudentService.addAllProvince(await _todoService.GetTasksAsync_province());
-        //await StudentService.addAlldistrict(await _todoService.GetTasksAsync_district());
-        //await StudentService.addAlltambon(await _todoService.GetTasksAsync_tambon());
-        //await StudentService.addAllconst_prenme(await _todoService.GetTasksAsync_const_prenme());
-        //await StudentService.addAllconst_sex(await _todoService.GetTasksAsync_const_sex());
-        //await StudentService.addAllconst_currlev(await _todoService.GetTasksAsync_const_currlev());
-        //await StudentService.addAllconst_disability_type(await _todoService.GetTasksAsync_const_disability_type());
-        //await StudentService.addAllconst_edulev(await _todoService.GetTasksAsync_const_edulev());
-        //await StudentService.addAllconst_elderly_grp(await _todoService.GetTasksAsync_const_elderly_grp());
-        //await StudentService.addAllconst_house_conditions(await _todoService.GetTasksAsync_const_house_conditions());
-        //await StudentService.addAllconst_occ(await _todoService.GetTasksAsync_const_occ());
-        //await StudentService.addAllconst_pertyp(await _todoService.GetTasksAsync_const_pertyp());
-        //await StudentService.addAllconst_reg(await _todoService.GetTasksAsync_const_reg());
-        //await StudentService.addAllconst_reltyp(await _todoService.GetTasksAsync_const_reltyp());
-        //await StudentService.addAllconst_school(await _todoService.GetTasksAsync_const_school());
-        //await StudentService.addAllconst_stsmar(await _todoService.GetTasksAsync_const_stsmar());
-        //await StudentService.addAllconst_vaccination(await _todoService.GetTasksAsync_const_vaccination());
+        todoList = await _todoService.GetTasksAsync_province();
+        List<district> todoList_district = await _todoService.GetTasksAsync_district();
+        List<tambon> todoList_tambon = await _todoService.GetTasksAsync_tambon();
+        List<const_prenme> todoList_const_prenme = await _todoService.GetTasksAsync_const_prenme();
+        List<const_sex> todoList_const_sex = await _todoService.GetTasksAsync_const_sex();
+        List<const_currlev> todoList_const_currlev = await _todoService.GetTasksAsync_const_currlev();
+        List<const_disability_type> todoList_const_disability_type = await _todoService.GetTasksAsync_const_disability_type();
+        List<const_edulev> todoList_const_edulev = await _todoService.GetTasksAsync_const_edulev();
+        List<const_elderly_grp> todoList_const_elderly_grp = await _todoService.GetTasksAsync_const_elderly_grp();
+        List<const_house_conditions> todoList_const_house_conditions = await _todoService.GetTasksAsync_const_house_conditions();
+        List<const_occ> todoList_const_occ = await _todoService.GetTasksAsync_const_occ();
+        List<const_pertyp> todoList_const_pertyp = await _todoService.GetTasksAsync_const_pertyp();
+        List<const_reg> todoList_const_reg = await _todoService.GetTasksAsync_const_reg();
+        List<const_reltyp> todoList_const_reltyp = await _todoService.GetTasksAsync_const_reltyp();
+        List<const_school> todoList_const_school = await _todoService.GetTasksAsync_const_school();
+        List<const_stsmar> todoList_const_stsmar = await _todoService.GetTasksAsync_const_stsmar();
+        List<const_vaccination> todoList_const_vaccination = await _todoService.GetTasksAsync_const_vaccination();
+
+
+        await StudentService.addAllProvince(todoList);
+        await StudentService.addAll_district(todoList_district);
+        await StudentService.addAll_tambon(todoList_tambon);
+        await StudentService.addAll_const_prenme(todoList_const_prenme);
+        await StudentService.addAll_const_sex(todoList_const_sex);
+        await StudentService.addAll_const_currlev(todoList_const_currlev);
+        await StudentService.addAll_const_disability_type(todoList_const_disability_type);
+        await StudentService.addAll_const_edulev(todoList_const_edulev);
+        await StudentService.addAll_const_elderly_grp(todoList_const_elderly_grp);
+        await StudentService.addAll_const_house_conditions(todoList_const_house_conditions);
+        await StudentService.addAll_const_occ(todoList_const_occ);
+        await StudentService.addAll_const_pertyp(todoList_const_pertyp);
+        await StudentService.addAll_const_reg(todoList_const_reg);
+        await StudentService.addAll_const_reltyp(todoList_const_reltyp);
+        await StudentService.addAll_const_school(todoList_const_school);
+        await StudentService.addAll_const_stsmar(todoList_const_stsmar);
+        await StudentService.addAll_const_vaccination(todoList_const_vaccination);
+        //syndataForEditform();
+    }
+    //private async void syndataForEditform()
+    //{
+
+
+
+    ////await StudentService.addAllProvince(await _todoService.GetTasksAsync_province());
+    //await StudentService.addAlldistrict(await _todoService.GetTasksAsync_district());
+    //await StudentService.addAlltambon(await _todoService.GetTasksAsync_tambon());
+    //await StudentService.addAllconst_prenme(await _todoService.GetTasksAsync_const_prenme());
+    //await StudentService.addAllconst_sex(await _todoService.GetTasksAsync_const_sex());
+    //await StudentService.addAllconst_currlev(await _todoService.GetTasksAsync_const_currlev());
+    //await StudentService.addAllconst_disability_type(await _todoService.GetTasksAsync_const_disability_type());
+    //await StudentService.addAllconst_edulev(await _todoService.GetTasksAsync_const_edulev());
+    //await StudentService.addAllconst_elderly_grp(await _todoService.GetTasksAsync_const_elderly_grp());
+    //await StudentService.addAllconst_house_conditions(await _todoService.GetTasksAsync_const_house_conditions());
+    //await StudentService.addAllconst_occ(await _todoService.GetTasksAsync_const_occ());
+    //await StudentService.addAllconst_pertyp(await _todoService.GetTasksAsync_const_pertyp());
+    //await StudentService.addAllconst_reg(await _todoService.GetTasksAsync_const_reg());
+    //await StudentService.addAllconst_reltyp(await _todoService.GetTasksAsync_const_reltyp());
+    //await StudentService.addAllconst_school(await _todoService.GetTasksAsync_const_school());
+    //await StudentService.addAllconst_stsmar(await _todoService.GetTasksAsync_const_stsmar());
+    //await StudentService.addAllconst_vaccination(await _todoService.GetTasksAsync_const_vaccination());
     @*}*@
     //}
 }
