@@ -1,7 +1,57 @@
 ﻿@page "/"
+@using SQLiteDemoWithBlazorApp.Models
+@using SQLiteDemoWithBlazorApp.Services
+@inject ITodoService _todoService
+@inject IStudentService StudentService
+<ul>
+    @foreach (var todo in todoList)
+    {
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
+        <li>
+            <input @bind="todo.province_name_thai" />
+        </li>
+    }
+</ul>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@code{
+    //public partial class index : ContentPage
+    //{
+
+    //ITodoService _todoService;
+    private List<province> todoList = new();
+    protected override async Task OnInitializedAsync()
+    {
+
+        //await StudentService.syncProvinceAsync();
+        //todoList = await _todoService.GetTasksAsync_person();
+        todoList = await _todoService.GetTasksAsync_province();
+        //await StudentService.addAllProvince(todoList);
+        //syndataForEditform();
+    }
+    private async void syndataForEditform()
+    {
+
+
+
+        ////await StudentService.addAllProvince(await _todoService.GetTasksAsync_province());
+        //await StudentService.addAlldistrict(await _todoService.GetTasksAsync_district());
+        //await StudentService.addAlltambon(await _todoService.GetTasksAsync_tambon());
+        //await StudentService.addAllconst_prenme(await _todoService.GetTasksAsync_const_prenme());
+        //await StudentService.addAllconst_sex(await _todoService.GetTasksAsync_const_sex());
+        //await StudentService.addAllconst_currlev(await _todoService.GetTasksAsync_const_currlev());
+        //await StudentService.addAllconst_disability_type(await _todoService.GetTasksAsync_const_disability_type());
+        //await StudentService.addAllconst_edulev(await _todoService.GetTasksAsync_const_edulev());
+        //await StudentService.addAllconst_elderly_grp(await _todoService.GetTasksAsync_const_elderly_grp());
+        //await StudentService.addAllconst_house_conditions(await _todoService.GetTasksAsync_const_house_conditions());
+        //await StudentService.addAllconst_occ(await _todoService.GetTasksAsync_const_occ());
+        //await StudentService.addAllconst_pertyp(await _todoService.GetTasksAsync_const_pertyp());
+        //await StudentService.addAllconst_reg(await _todoService.GetTasksAsync_const_reg());
+        //await StudentService.addAllconst_reltyp(await _todoService.GetTasksAsync_const_reltyp());
+        //await StudentService.addAllconst_school(await _todoService.GetTasksAsync_const_school());
+        //await StudentService.addAllconst_stsmar(await _todoService.GetTasksAsync_const_stsmar());
+        //await StudentService.addAllconst_vaccination(await _todoService.GetTasksAsync_const_vaccination());
+    }
+    //}
+}
+

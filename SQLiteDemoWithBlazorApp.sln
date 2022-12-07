@@ -1,8 +1,14 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
+# Visual Studio Version 16
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLiteDemoWithBlazorApp", "SQLiteDemoWithBlazorApp.csproj", "{65ECD8B0-5AA4-4A27-9DBD-B19BC3A2138D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0C7B79ED-5CA8-4C79-9C42-9F202CDB3C81}"
+	ProjectSection(SolutionItems) = preProject
+		SQLiteDemoWithBlazorApp.sln = SQLiteDemoWithBlazorApp.sln
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

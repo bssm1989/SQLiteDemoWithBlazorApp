@@ -23,7 +23,10 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<IStudentService, StudentService>();
 		builder.Services.AddSingleton<WeatherForecastService>();
-
-		return builder.Build();
+        builder.Services.AddSingleton<IHttpsClientHandlerService, HttpsClientHandlerService>();
+        builder.Services.AddSingleton<IRestService, RestService>();
+        builder.Services.AddSingleton<ITodoService, TodoService>();
+        builder.Services.AddSingleton<WeatherForecastService>();
+        return builder.Build();
 	}
 }
